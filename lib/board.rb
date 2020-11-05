@@ -26,8 +26,8 @@ class Board
   end
 
   def full?
-    @cells.each do |c|
-      c = "X" || c = "O"
+    @cells.all? do |xo|
+      xo == "X" || xo == "O"
     end
   end
 
