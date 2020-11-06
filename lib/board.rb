@@ -1,6 +1,6 @@
 class Board
 
-  attr_accessor :cells
+  attr_accessor :cells, :token
 
   def initialize
     reset!
@@ -32,7 +32,25 @@ class Board
   end
 
   def update(input, player)
-    input
+    @cells[input.to_i - 1] = player.token
+  end
+
+  def taken?(input)
+    @cells[input.to_i - 1] != " "
+  end
+
+  def valid_move?(input)
+    input.to_i.between?(1,9) && !taken?(input)
+  end
+
+  def turn_count
+    counter = 0
+    @cells.each do |turn|
+      if turn == "O" || turn == "X"
+        counter += 1
+      end
+    end
+  return counter
   end
 
 end
