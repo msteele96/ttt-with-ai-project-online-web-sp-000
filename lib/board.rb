@@ -18,14 +18,9 @@ class Board
     @cells = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
   end
 
-  def input_to_index(input)
-    index = (input.to_i - 1)
-  end
-
   def position(input)
-    index = input_to_index(input)
-    if index >= 0 && index <= 8
-      @cells[index]
+    if input.to_i >= 1 && input.to_i <= 9
+      @cells[input.to_i - 1]
     end
   end
 
@@ -36,13 +31,11 @@ class Board
   end
 
   def update(input, player)
-    index = input_to_index(input)
-    @cells[index] = player.token
+    @cells[input.to_i - 1] = player.token
   end
 
   def taken?(input)
-    index = input_to_index(input)
-    @cells[index] != " "
+    @cells[input.to_i - 1] != " "
   end
 
   def valid_move?(input)

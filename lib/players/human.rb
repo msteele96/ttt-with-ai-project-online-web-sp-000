@@ -2,7 +2,7 @@ module Players
   class Human < Player
 
     def move(board)
-      gets.strip.to_i
+      gets.strip
     end
 
   end

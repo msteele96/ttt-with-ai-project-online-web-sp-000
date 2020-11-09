@@ -64,11 +64,11 @@ class Game
   end
 
   def turn
+    # while @board.valid_move?(self.current_player.move(@board)) == false
+    #   "invalid"
+    # end
     binding.pry
-    until self.current_player.move(@board).valid_move?(@board) == true
-      "invalid"
-    end
-    @board.update(self.current_player, self.current_player.move(@board))
+      @board.update(current_player.move(@board), current_player)
   end
 
 end
