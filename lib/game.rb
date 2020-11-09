@@ -64,10 +64,24 @@ class Game
   end
 
   def turn
-    if @board.valid_move?(current_player.move(@board))
-      @board.update(current_player.move(@board), current_player)
+    player = current_player
+    current_move = player.move(@board)
+    if @board.valid_move?(current_move)
+      @board.update(current_move, player)
+      @board.display
     else
-      "invalid"
+      turn
+    end
+  end
+
+  def play
+    until over?
+      turn
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
     end
   end
 
