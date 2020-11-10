@@ -14,18 +14,10 @@ module Players
     end
 
     def win(board)
-        Game::WIN_COMBINATIONS.find { |combo|
-          (board.cells[combo[0]] == token) &&
-          (board.cells[combo[1]] == token) &&
-          (board.taken?([combo[2]]) == false)}
-          # ||
-          # {(board.cells[combo[1]] == token) &&
-          # (board.cells[combo[2]] == token) &&
-          # (board.taken?[combo[0]] == false)}
-          # ||
-          # {(board.cells[combo[0]] == token) &&
-          # (board.cells[combo[2]] == token) &&
-          # (board.taken?[combo[1]] == false)}
+      winning_combo = complete_combo?(board, self.token)
+      if winning_combo && winning_combo.count{|index| board.position(index+1) == self.token} == 2
+        winning_combo.detect{|index| !board.taken?(index)}
+      end
     end
 
     def block(board)
