@@ -10,7 +10,8 @@ module Players
     end
 
     def best_move(board)
-      win(board) || block(board) || corner(board) || random
+      # win(board) || block(board) ||
+       corner(board) || random
     end
 
     def win(board)
