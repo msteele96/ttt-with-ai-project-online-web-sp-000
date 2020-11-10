@@ -5,7 +5,7 @@ module Players
       if board.taken?("5") == false
         "5"
       elsif board.taken?("5")
-        corner(board)
+        corner(board) || random
       else
         random
       end
