@@ -58,7 +58,8 @@ module Players
     #   self.token == "X" ? "O" : "X"
     # end
 
-    if !board.taken?('5')
+    def move(board)
+      if !board.taken?('5')
     '5'
   else
     best_move(board)
