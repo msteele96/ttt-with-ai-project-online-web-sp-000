@@ -2,7 +2,6 @@ module Players
   class Computer < Player
 
     def move(board)
-      corners = [1,3,7,9]
       if board.taken?("5") == false
         "5"
       else
@@ -12,6 +11,15 @@ module Players
 
     def best_move(board)
       win(board) || block(board) || corner(board) || random
+    end
+
+    def win(board)
+      
+    end
+
+    def corner(board)
+      corners = [1,3,7,9]
+      corners.find { |corner| board.taken?(corner) == false }
     end
 
     def random
