@@ -25,8 +25,8 @@ module Players
           ||
           (board.cells[combo[0]] == token) &&
           (board.cells[combo[2]] == token) &&
-          (board.taken?[combo[1]] == false)
-        }.find { |free| board.taken?(free) == false }
+          (board.taken?[combo[1]] == false)}.find { |free| 
+            board.taken?(free) == false }
     end
 
     def block(board)
