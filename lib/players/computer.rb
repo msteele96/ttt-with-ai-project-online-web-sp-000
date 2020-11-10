@@ -6,8 +6,6 @@ module Players
         "5"
       elsif board.taken?("5")
         corner(board) || random
-      else
-        random
       end
     end
 
