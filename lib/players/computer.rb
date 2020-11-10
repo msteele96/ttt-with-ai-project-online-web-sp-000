@@ -14,7 +14,7 @@ module Players
     end
 
     def win(board)
-      Game::WIN_COMBINATIONS.find { |combo| 
+      Game::WIN_COMBINATIONS.find { |combo|
         (board.cells[combo[0]] == token) &&
         (board.cells[combo[1]] == token) &&
         (board.taken?[combo[2]] == false)
@@ -26,12 +26,12 @@ module Players
         (board.cells[combo[0]] == token) &&
         (board.cells[combo[2]] == token) &&
         (board.taken?[combo[1]] == false)
-        
+
       }
     end
 
     def block(board)
-      
+
     end
 
     def corner(board)
