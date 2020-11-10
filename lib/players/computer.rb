@@ -54,6 +54,9 @@ module Players
       (1..9).to_a.sample
     end
 
+    def opponent_token
+      self.token == "X" ? "O" : "X"
+    end
 
   end
 end
