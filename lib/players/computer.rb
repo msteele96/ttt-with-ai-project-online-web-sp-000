@@ -20,6 +20,24 @@ module Players
       end
     end
 
+    def complete_combo?(board, token)
+    Game::WIN_COMBINATIONS.detect do |combo|
+      (
+        (board.cells[combo[0]] == token && board.cells[combo[1]] == token) &&
+        !board.taken?(combo[2])
+      ) ||
+      (
+        (board.cells[combo[1]] == token && board.cells[combo[2]] == token) &&
+        !board.taken?(combo[0])
+      ) ||
+      (
+        (board.cells[combo[0]] == token && board.cells[combo[2]] == token) &&
+        !board.taken?(combo[1])
+      )
+    end
+      
+    end
+
     def block(board)
 
     end
