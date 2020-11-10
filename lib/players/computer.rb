@@ -39,7 +39,10 @@ module Players
     end
 
     def block(board)
-
+      blocking_combo = complete_combo?(board, self.opponent_token)
+      if blocking_combo && blocking_combo.count{|index| board.position(index+1) == self.opponent_token} == 2
+        blocking_combo.detect{|index| !board.taken?(index+1)}
+      end
     end
 
     def corner(board)
