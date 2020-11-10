@@ -17,7 +17,7 @@ module Players
         Game::WIN_COMBINATIONS.find { |combo|
           (board.cells[combo[0]] == token) &&
           (board.cells[combo[1]] == token) &&
-          (board.taken?[combo[2]] == false)}
+          (board.taken?([combo[2]]) == false)}
           # ||
           # {(board.cells[combo[1]] == token) &&
           # (board.cells[combo[2]] == token) &&
