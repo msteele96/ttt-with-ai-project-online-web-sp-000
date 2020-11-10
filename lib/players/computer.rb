@@ -8,16 +8,16 @@ module Players
         corner(board)
       end
     end
-    
+
     def corner(board)
       corners = [1,3,7,9]
       corners.find { |corner| board.taken?(corner) == false }
     end
-    
+
     def random
       (1..9).to_a.sample
     end
-    
+
     def opponent_token
       self.token == "X" ? "O" : "X"
     end
