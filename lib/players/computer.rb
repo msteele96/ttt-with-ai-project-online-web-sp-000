@@ -35,7 +35,7 @@ module Players
         !board.taken?(combo[1])
       )
     end
-      
+
     end
 
     def block(board)
