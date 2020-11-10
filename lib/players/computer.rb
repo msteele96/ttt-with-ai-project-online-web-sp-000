@@ -6,9 +6,18 @@ module Players
       if board.taken?("5") == false
         "5"
       else
-        (1..9).to_a.sample
+        best_move(board)
       end
     end
+
+    def best_move(board)
+      win(board) || block(board) || corner(board) || random
+    end
+
+    def random
+      (1..9).to_a.sample
+    end
+
 
   end
 end
