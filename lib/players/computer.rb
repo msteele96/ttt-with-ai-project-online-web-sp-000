@@ -71,7 +71,7 @@ def best_move(board)
 end
 
 def corner(board)
-  [0,2,6,8].detect{|cell| !board.taken?(cell)}
+  [1,3,7,9].detect{|cell| !board.taken?(cell)}
 end
 
 def complete_combo?(board, token)
@@ -116,7 +116,7 @@ def opponent_token
 end
 
 def random
-  (0..8).to_a.sample
+  (1..9).to_a.sample
 end
 
 
