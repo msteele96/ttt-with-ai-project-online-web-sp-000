@@ -14,7 +14,7 @@ module Players
     end
 
     def win(board)
-      
+
     end
 
     def corner(board)
